@@ -1,6 +1,9 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.Objects;
 
-public class MyHashTable {
+
+public class MyHashTable<K, V> {
     private class HashNode <K, V>{
         private K key;
         private V value;
@@ -15,4 +18,8 @@ public class MyHashTable {
             return "{" + key + " " + value + "}";
         }
     }
+    private HashNode<K, V>[] chainArray;
+    private int M = 11; //Default number of chain
+    private int size;
+
 }
