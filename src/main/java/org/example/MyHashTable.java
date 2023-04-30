@@ -28,4 +28,13 @@ public class MyHashTable<K, V> {
             chainArray[i] = null;
         }
     }
+
+  public MyHashTable(int M){
+    size = 0;
+    this.M = M;
+    this.chainArray = new HashNode[M];
+    for (int i = 0; i < M; i++){
+        chainArray[i] = null;
+    }
+}
 }
