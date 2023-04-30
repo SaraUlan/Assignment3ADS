@@ -21,5 +21,11 @@ public class MyHashTable<K, V> {
     private HashNode<K, V>[] chainArray;
     private int M = 11; //Default number of chain
     private int size;
-
+    public MyHashTable(){
+        chainArray = new HashNode[M];
+        size = 0;
+        for (int i = 0; i < M; i++){
+            chainArray[i] = null;
+        }
+    }
 }
