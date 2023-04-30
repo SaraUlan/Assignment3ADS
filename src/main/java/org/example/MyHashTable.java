@@ -37,4 +37,7 @@ public class MyHashTable<K, V> {
         chainArray[i] = null;
     }
 }
+    private int hash(K key) {
+        return Objects.hash(key) % M;
+    }
 }
