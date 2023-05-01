@@ -55,4 +55,21 @@ public class MyHashTable<K, V> {
         chainArray[Index] = newhashnode;
         size++;
     }
+    public int size(){
+        return size;
+    }
+    public boolean isEmpty(){
+        return size == 0;
+    }
+    public V get(K key){
+        int Index = hash(key);
+        HashNode<K, V> hashnode = chainArray[Index];
+        while(hashnode != null){
+            if(hashnode.key.equals(key)){
+                return hashnode.value;
+            }
+            hashnode = hashnode.next;
+        }
+        return null;
+    }
 }
