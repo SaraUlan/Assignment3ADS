@@ -121,4 +121,16 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+    public void printBucketSizes() {
+        for (int i = 0; i < M; i++) {
+            int bucketSize = 0;
+            HashNode<K, V> node = chainArray[i];
+            while (node != null) {
+                bucketSize++;
+                node = node.next;
+            }
+            System.out.println("Bucket " + i + " contains " + bucketSize + " elements.");
+        }
+    }
+
 }
