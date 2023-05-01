@@ -107,4 +107,18 @@ public class MyHashTable<K, V> {
         sb.append("}");
         return sb.toString();
     }
+    public boolean contains(V value){
+        return this.getKey(value) != null;
+    }
+    public K getKey(V value) {
+        for (HashNode<K, V> hashnode : chainArray) {
+            while (hashnode != null) {
+                if (hashnode.value.equals(value)) {
+                    return hashnode.key;
+                }
+                hashnode = hashnode.next;
+            }
+        }
+        return null;
+    }
 }
