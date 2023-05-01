@@ -92,4 +92,19 @@ public class MyHashTable<K, V> {
         }
         return null;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("{");
+        for (HashNode<K, V> hashnode : chainArray) {
+            while (hashnode != null) {
+                sb.append(hashnode.key.toString()).append("=").append(hashnode.value.toString()).append(",");
+                hashnode = hashnode.next;
+            }
+        }
+        if (sb.length() > 1) {
+            sb.deleteCharAt(sb.length() - 1);
+        }
+        sb.append("}");
+        return sb.toString();
+    }
 }
